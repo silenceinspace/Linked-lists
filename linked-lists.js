@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 class Node {
   constructor(curValue = null, next = null) {
     this.curValue = curValue;
@@ -186,7 +184,7 @@ class LinkedList {
       }
 
       previous.next = current.next;
-      this.tail = previous;
+      if (previous.next === null) this.tail = previous;
     }
     this.size -= 1;
     return this;
